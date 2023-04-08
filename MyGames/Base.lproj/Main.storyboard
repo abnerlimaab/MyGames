@@ -312,7 +312,7 @@
                 <navigationController id="obV-ol-DdH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plataformas" image="console" id="z1I-4e-XLZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NsX-yd-W4K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="second"/>
                     </navigationBar>
@@ -330,7 +330,7 @@
                 <navigationController id="jXR-pw-iV8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Jogos" image="game" id="Duc-EY-BKw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a1z-JO-Pbq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="main"/>
                     </navigationBar>
@@ -364,7 +364,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qrb-Pb-14x"/>
+        <segue reference="Pla-Ku-UEi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>

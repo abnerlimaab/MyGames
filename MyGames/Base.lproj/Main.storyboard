@@ -142,13 +142,16 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addEditCover:" destination="9bP-If-ZvQ" eventType="touchUpInside" id="1DU-ev-1SW"/>
+                                    <action selector="addEditGame:" destination="9bP-If-ZvQ" eventType="touchUpInside" id="pYU-gm-O5Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gj-uK-5LQ">
                                 <rect key="frame" x="16" y="318" width="288" height="174"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Toque para adicionar a imagem de capa"/>
+                                <connections>
+                                    <action selector="addEditCover:" destination="9bP-If-ZvQ" eventType="touchUpInside" id="UPs-kJ-Bsd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YLT-V3-Xr4"/>
@@ -312,7 +315,7 @@
                 <navigationController id="obV-ol-DdH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plataformas" image="console" id="z1I-4e-XLZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NsX-yd-W4K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="second"/>
                     </navigationBar>
@@ -330,7 +333,7 @@
                 <navigationController id="jXR-pw-iV8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Jogos" image="game" id="Duc-EY-BKw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a1z-JO-Pbq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="main"/>
                     </navigationBar>

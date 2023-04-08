@@ -128,10 +128,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c2A-v3-fAk">
-                                <rect key="frame" x="16" y="318" width="288" height="174"/>
+                                <rect key="frame" x="16" y="318" width="288" height="125"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLk-cg-HjL">
-                                <rect key="frame" x="16" y="512" width="288" height="40"/>
+                                <rect key="frame" x="16" y="463" width="288" height="40"/>
                                 <color key="backgroundColor" name="main"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="nLe-CF-xcU"/>
@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gj-uK-5LQ">
-                                <rect key="frame" x="16" y="318" width="288" height="174"/>
+                                <rect key="frame" x="16" y="318" width="288" height="125"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Toque para adicionar a imagem de capa"/>
                                 <connections>
@@ -170,7 +170,7 @@
                             <constraint firstItem="0RU-u9-lh1" firstAttribute="top" secondItem="76x-Xv-LsS" secondAttribute="bottom" constant="8" id="SzF-Lx-ulG"/>
                             <constraint firstItem="9gj-uK-5LQ" firstAttribute="height" secondItem="c2A-v3-fAk" secondAttribute="height" id="Y8x-MW-NgY"/>
                             <constraint firstItem="1JS-zV-nQ9" firstAttribute="top" secondItem="t6Y-rw-yvw" secondAttribute="bottom" constant="16" id="YWe-a6-8Rz"/>
-                            <constraint firstItem="YLT-V3-Xr4" firstAttribute="bottom" secondItem="dLk-cg-HjL" secondAttribute="bottom" constant="-33" id="YpG-YP-Qyf"/>
+                            <constraint firstItem="YLT-V3-Xr4" firstAttribute="bottom" secondItem="dLk-cg-HjL" secondAttribute="bottom" constant="16" id="YpG-YP-Qyf"/>
                             <constraint firstItem="9gj-uK-5LQ" firstAttribute="width" secondItem="c2A-v3-fAk" secondAttribute="width" id="bkF-qI-NOB"/>
                             <constraint firstItem="0RU-u9-lh1" firstAttribute="leading" secondItem="YLT-V3-Xr4" secondAttribute="leading" constant="16" id="dbK-aE-TGX"/>
                             <constraint firstItem="dLk-cg-HjL" firstAttribute="top" secondItem="c2A-v3-fAk" secondAttribute="bottom" constant="20" id="eja-g2-jrA"/>

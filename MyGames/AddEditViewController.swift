@@ -17,11 +17,27 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var ivCover: UIImageView!
     
     var game: Game!
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        return pickerView
+    }()
+    var consolesManager = ConsolesManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tfConsole.inputView = pickerView
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        consolesManager.loadConsoles(with: context)
     }
     
     
@@ -42,5 +58,21 @@ class AddEditViewController: UIViewController {
         }
         
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return consolesManager.consoles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let console = consolesManager.consoles[row]
+        
+        return console.name
     }
 }

@@ -64,7 +64,7 @@
                                     <outlet property="ivCover" destination="mEX-gg-sF6" id="pth-53-9dk"/>
                                     <outlet property="lbConsole" destination="44Y-wX-Qop" id="voM-hC-bB1"/>
                                     <outlet property="lbTitle" destination="IWG-hZ-HY7" id="gUz-6l-snf"/>
-                                    <segue destination="Uy2-zy-usN" kind="show" id="fZi-ll-BTW"/>
+                                    <segue destination="Uy2-zy-usN" kind="show" identifier="gameSegue" id="fZi-ll-BTW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,7 +76,7 @@
                     <navigationItem key="navigationItem" title="Jogos" id="Mh1-gF-IzY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kzW-lb-H3n">
                             <connections>
-                                <segue destination="9bP-If-ZvQ" kind="show" id="Pla-Ku-UEi"/>
+                                <segue destination="9bP-If-ZvQ" kind="show" identifier="newGameSegue" id="Pla-Ku-UEi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -213,17 +213,23 @@
                                 <color key="textColor" name="main"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-sX-FFl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-sX-FFl">
                                 <rect key="frame" x="16" y="160.5" width="288" height="338.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plataforma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2E-BW-yxj">
                                 <rect key="frame" x="16" y="96.5" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="o4I-eH-GL6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ano de lançamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwB-5T-Fhc">
                                 <rect key="frame" x="16" y="123.5" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="emU-hl-sCg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -315,7 +321,7 @@
                 <navigationController id="obV-ol-DdH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plataformas" image="console" id="z1I-4e-XLZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NsX-yd-W4K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="second"/>
                     </navigationBar>
@@ -333,7 +339,7 @@
                 <navigationController id="jXR-pw-iV8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Jogos" image="game" id="Duc-EY-BKw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a1z-JO-Pbq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="main"/>
                     </navigationBar>
@@ -367,7 +373,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pla-Ku-UEi"/>
+        <segue reference="Qrb-Pb-14x"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>

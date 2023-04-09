@@ -22,6 +22,7 @@ class AddEditViewController: UIViewController {
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        pickerView.backgroundColor = .white
         
         return pickerView
     }()
@@ -30,9 +31,29 @@ class AddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        toolBar.tintColor = UIColor(named: "main")
+        let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        let btFlexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolBar.items = [btCancel, btFlexibleSpace, btDone]
+        
         tfConsole.inputView = pickerView
+        tfConsole.inputAccessoryView = toolBar
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func cancel() {
+        tfConsole.resignFirstResponder()
+    }
+    
+    @objc func done() {
+        let index = pickerView.selectedRow(inComponent: 0)
+        tfConsole.text = consolesManager.consoles[index].name
+        
+        cancel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +63,39 @@ class AddEditViewController: UIViewController {
     
     
     @IBAction func addEditCover(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster", preferredStyle: .actionSheet)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Câmera", style: .default) { action in
+                self.selectPicture(sourceType: .camera)
+            }
+            alert.addAction(cameraAction)
+        }
+        
+        let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { action in
+            self.selectPicture(sourceType: .photoLibrary)
+        }
+        alert.addAction(libraryAction)
+        
+        let photosAction = UIAlertAction(title: "Álbum de fotos", style: .default) { action in
+            self.selectPicture(sourceType: .savedPhotosAlbum)
+        }
+        alert.addAction(photosAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    func selectPicture(sourceType: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = self
+        imagePicker.navigationBar.tintColor = UIColor(named: "main")
+        
+        present(imagePicker, animated: true)
     }
     
     @IBAction func addEditGame(_ sender: UIButton) {
@@ -50,6 +104,13 @@ class AddEditViewController: UIViewController {
         }
         game.title = tfTitle.text
         game.releaseDate = dpReleaseDate.date
+        
+        if !tfConsole.text!.isEmpty {
+            let index = pickerView.selectedRow(inComponent: 0)
+            game.console = consolesManager.consoles[index]
+        }
+        
+        game.cover = ivCover.image
         
         do {
             try context.save()
@@ -74,5 +135,14 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let console = consolesManager.consoles[row]
         
         return console.name
+    }
+}
+
+extension AddEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        ivCover.image = image
+        btCover.setTitle(nil, for: .normal)
+        dismiss(animated: true)
     }
 }
